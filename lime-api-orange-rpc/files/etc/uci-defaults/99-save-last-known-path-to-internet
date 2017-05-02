@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "saving last known path to the Internet"
-echo "*/6 * * * * /usr/sbin/internet_path > /tmp/last_internet_path" >> /etc/crontabs/root
-

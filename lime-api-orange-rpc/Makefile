@@ -7,9 +7,21 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=lime-api-orange-rpc
+
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/libremesh/lime-api-orange-rpc.git
+PKG_SOURCE_VERSION:=d29eb8d37b117b3962a52dce63c89b7cf5b03806
 PKG_VERSION=$(GIT_COMMIT_DATE)-$(GIT_COMMIT_TSTAMP)
 GIT_COMMIT_DATE:=$(shell git log -n 1 --pretty=%ad --date=short . )
 GIT_COMMIT_TSTAMP:=$(shell git log -n 1 --pretty=%at . )
+
+PKG_VERSION:=3.16.01-$(PKG_SOURCE_VERSION)
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
+PKG_MIRROR_MD5SUM:=
+
+PKG_LICENSE:=GPLv3+
+PKG_LICENSE_FILES:=
 
 include $(INCLUDE_DIR)/package.mk
 
